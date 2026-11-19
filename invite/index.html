@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دعوة للانضمام لـ MAK</title>
+<meta property="og:title" content="انضم لـ MAK"><meta property="og:description" content="صاحبك بيدعوك تشتغل معانا. استخدم كود الدعوة وسجّل كصنايعي.">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Cairo,sans-serif;background:#EAF0FB;color:#0B1F4B;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.c{background:#fff;border-radius:24px;padding:28px 22px;max-width:380px;width:100%;text-align:center;box-shadow:0 8px 30px #0b1f4b22}
+h1{margin:8px 0;font-size:24px}p{margin:6px 0;line-height:1.7}
+.code{font-size:30px;font-weight:800;letter-spacing:4px;background:#EAF0FB;border-radius:14px;padding:12px;margin:14px 0;direction:ltr}
+button,a.b{display:block;width:100%;box-sizing:border-box;border:0;border-radius:14px;padding:14px;margin-top:10px;font:800 16px Cairo,sans-serif;cursor:pointer;text-decoration:none}
+.o{background:#FF8A00;color:#fff}.n{background:#0B1F4B;color:#fff}.s{font-size:13px;opacity:.7}
+</style></head><body><div class="c">
+<div style="font-size:56px">👷</div>
+<h1>اتدعيت تنضم لـ MAK</h1>
+<p>زميلك في المهنة بيدعوك تسجّل في التطبيق وتستلم شغل من عملاء قريبين منك.</p>
+<div class="code" id="code">----</div>
+<button class="o" id="copy">انسخ كود الدعوة</button>
+<a class="b n" id="dl" style="display:none">حمّل التطبيق</a>
+<p class="s" id="hint">بعد ما تنزّل التطبيق: سجّل كصنايعي وحط الكود في خانة "كود الدعوة" (أو اضغط "لصق الكود" بعد ما تنسخه). الكود بيتطبّق مرة واحدة وللحسابات الجديدة بس.</p>
+</div>
+<script>
+// حط هنا رابط تحميل التطبيق (جوجل بلاي أو ملف الـ APK) أول ما يبقى جاهز
+var APP_URL = '';
+var m = (new URLSearchParams(location.search).get('ref') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 16);
+var el = document.getElementById('code');
+el.textContent = m ? m.toUpperCase() : 'الرابط غير صالح';
+if (!m) document.getElementById('copy').style.display = 'none';
+if (APP_URL) { var a = document.getElementById('dl'); a.href = APP_URL; a.style.display = 'block' }
+function cp() { try { navigator.clipboard.writeText(m).then(function () { document.getElementById('copy').textContent = 'تم النسخ ✅' }) } catch (e) {} }
+document.getElementById('copy').onclick = cp;
+</script></body></html>
